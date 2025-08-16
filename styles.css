@@ -8,7 +8,8 @@ h1{
 }
 
 ul{
-
+   width:100%;
+    text-align:center;
    list-style:none;
     display:inline-block;
     text-decoration:none;
