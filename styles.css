@@ -16,6 +16,7 @@ ul{
 }
 
 li{
+    text-decoration:none;
      padding-top:50px;
     margin-left: 100px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
