@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="Java Course" content="Hw assignment 2 calculating operational values">
+    <title>Assignment 2</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+    function process(){
+
+        let number1,number2,number3,sum,average,product;
+
+        //number1 = document.forms["myForm"].elements["number11"].value; // alternate way of getting value
+        number1 = document.getElementById("number1").value;
+        number2 = document.getElementById("number2").value;
+        number3 = document.getElementById("number3").value;
+         
+        //console.log(number1); //for checking output of number1 is correct
+
+        let num1 = parseInt(number1);
+        let num2 = parseInt(number2);
+        let num3 = parseInt(number3);
+
+        let numArray = [num1,num2,num3]
+        let minNum = numArray[1];
+        let maxNum = numArray[1]
+        for(let i = 0; i<numArray.length;i++){
+            if(numArray[i] < minNum){
+                minNum=numArray[i];
+            }
+            if(numArray[i]>maxNum){
+                maxNum = numArray[i];
+            }
+        }
+
+        sum = num1+num2+num3;
+        average = sum/3;
+        product = num1*num2*num3;
+
+        
+
+        if( Number.isFinite(num1) && Number.isFinite(num2) && Number.isFinite(num3)  ){
+
+        document.forms["myForm"].elements["result"].value = `The sum is ${sum}\nThe average is ${average.toFixed(2)}\nThe product is ${product}\nThe min num is ${minNum}\nThe max number is ${maxNum}` ;
+        }
+        else{
+             document.forms["myForm"].elements["result"].value = `Enter values for all numbers`
+        }
+
+    }
+   </script>
+</head>
+<body>
+
+    <h1>Part 2 - Calculating sum average and product </h1>
+    <form name="myForm">
+        <table>
+        <tr>
+            <td><label for="number1" >First Number</label>:</td>
+            <td> <input type="number" name="number11" id="number1"></td>
+        </tr>
+         <tr>
+            <td><label for="number2" >Second Number</label>:</td>
+            <td> <input type="number" id="number2"></td>
+        </tr>
+         <tr>
+            <td><label for="number3">Third Number</label>:</td>
+            <td> <input type="number" id="number3"></td>
+        </tr>
+        </table>
+        <br>
+         Results
+        <br>
+        <textarea rows="6" cols="40" name="result" id="result">
+        </textarea>
+        <br> <br>
+        <input type="button" onclick="process()" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <ul>
+    
+        <li><a href="hw2.html">Back to Homework 2 Main Page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+
+    
+</body>
+</html>
