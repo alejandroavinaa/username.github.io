@@ -41,5 +41,21 @@ a:hover{
 
 }
 
+#DollarVal:focus{
+    background-color:lightblue;
+}
+
+
+#tableExtra {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+#myFormExtra td , #myFormExtra th{
+    border:1px solid black;
+    padding:10px;
+    margin:auto;
+}
+
 
 
