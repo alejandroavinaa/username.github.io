@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 3 functions part 1">
+    <title>Assignment 3 part 1</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+        let AvgHomeScore,MidTermScore,FinalExamScore,partScore
+
+
+        function process(){
+
+
+        AvgHomeScore = document.getElementById("AvgHome").value;
+        AvgHomeScoreInt = parseInt(AvgHomeScore);
+
+        MidTermScore = document.getElementById("MidTerm").value;
+        MidTermScoreInt = parseInt(MidTermScore);
+
+        FinalExamScore = document.getElementById("FinalExam").value;
+        FinalExamInt = parseInt(FinalExamScore);
+
+        partScore = document.getElementById("part").value;
+        partScoreInt = parseInt(partScore);
+
+         let divOne = document.getElementById("resultDiv");
+
+        console.log(AvgHomeScoreInt+" "+MidTermScoreInt+" "+FinalExamInt+" "+partScoreInt)
+           
+        if(AvgHomeScoreInt >=0 && AvgHomeScoreInt <=100 && MidTermScoreInt >=0 && MidTermScoreInt <=100 && FinalExamInt >=0 && FinalExamInt <=100 && partScoreInt >=0 && partScoreInt <=100){
+           
+            let finalAverage = (.5 * AvgHomeScoreInt) + (.2 * MidTermScoreInt) + (.2 * FinalExamInt) + (.1 * partScoreInt);
+            console.log(finalAverage)
+
+            let FinalAverageString = `<p>Final Student Average Score : ${finalAverage.toFixed(0)} % </p>`;
+
+            if(finalAverage >=90){
+                FinalAverageString += "<p>Letter Grade : A </p>";
+                divOne.innerHTML = FinalAverageString;
+            }
+            else if(finalAverage >=80 && finalAverage <90){
+                FinalAverageString += "<p>Letter Grade : B </p>";
+                 divOne.innerHTML = FinalAverageString;
+            }
+            else if(finalAverage >=70 && finalAverage <80){
+                FinalAverageString += "<p>Letter Grade : C </p> ";
+                 divOne.innerHTML = FinalAverageString;
+            }
+            else if(finalAverage >=60 && finalAverage <70){
+                FinalAverageString += "<p>Letter Grade : D </p> <p>Student Must Retake the Course</p>";
+                 divOne.innerHTML = FinalAverageString;
+            }
+            else{
+                FinalAverageString += "<p>Letter Grade : F </p> <p>Student Must Retake the Course</p>";
+                 divOne.innerHTML = FinalAverageString;
+            }
+            
+        }
+        else{
+            divOne.innerHTML = "<p>Enter valid scores between 0 and 100</p>";
+        }
+
+       
+    }
+     function resetText(){
+            console.log("here")
+            let divOne = document.getElementById("resultDiv");
+            divOne.innerHTML = "";
+        }
+   </script>
+</head>
+<body>
+
+    <h1>Homework 3 - Functions </h1>
+    <h1>Student Grades</h1>
+    <form name="myForm">
+
+        <table>
+            <tr>
+                <td><label for="AvgHome">Homework Average</label></td>
+                <td><input type="number" id="AvgHome" ></td>
+            </tr>
+             <tr>
+                <td><label for="MidTerm">Midterm Exam Score</label></td>
+                <td><input type="number"  name = "Mid Term Score" id="MidTerm" ></td>
+            </tr>
+             <tr>
+                <td><label for="FinalExam">Final Exam Score</label></td>
+                <td><input type="number" name="Final Exam Score" id="FinalExam" ></td>
+            </tr>
+             <tr>
+                <td><label for="part">Participation</label></td>
+                <td><input type="number" name="Participation Score" id="part" ></td>
+            </tr>
+        </table>
+        <input type="button" onclick="process()" value="Submit">
+        <button type="reset" value="Reset" onclick="resetText()"> Reset </button>
+
+
+    </form>
+
+    <div id="resultDiv"> </div>
+
+    <ul>
+        <li><a href="hw3.html">Back to homework 3 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+
+    
+</body>
+</html>
