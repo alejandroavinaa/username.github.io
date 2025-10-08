@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 4 looping functions part 1">
+    <title>Assignment 4 part 1</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+    function fourthInteger(){
+        let product = 5;
+        let sum = 5;
+        let divOne = document.getElementById("resultDiv");
+        for(let i=9; i<=25;i+=4){
+            console.log(i);
+
+            product *=  i;
+            //console.log("product: "+product)
+
+            sum += i;
+            //console.log("sum: "+sum)
+
+
+        }
+        console.log("sum: "+sum)
+        console.log("product: "+product.toLocaleString())
+
+        let sumResult = `<p>The sum of the integers from 5 to 25 incremented by 4 is: ${sum}</p>`;
+        let productResult = `<p>The product of the integers from 5 to 25 incremented by 4 is: ${product.toLocaleString()}</p>`;
+        divOne.innerHTML = sumResult + productResult;
+
+    }
+
+    function thirdInteger(){
+
+        let i=6;
+        let sum=3;
+        let product=3;
+        let divTwo = document.getElementById("secondResultDiv");
+
+        while(i<=18){
+
+            sum+= i;
+            product *= i;
+            i+=3;
+            console.log(i)
+            console.log("sum: "+sum)
+            console.log("product: "+product)
+
+        }
+        let sumResult = `<p>The sum of the integers from 3 to 18 incremented by 3 is: ${sum}</p>`;
+        let productResult = `<p>The product of the integers from 3 to 18 incremented by 3 is: ${product.toLocaleString()}</p>`;
+        divTwo.innerHTML = sumResult + productResult;
+
+    }
+       
+           
+   </script>
+</head>
+<body>
+
+    <h1>Homework 4 - looping Functions </h1>
+   
+    <div id="resultDiv"> </div>
+ <script>fourthInteger()</script>
+ <div id="secondResultDiv"></div>
+ <script>thirdInteger()</script>
+
+    <ul>
+        <li><a href="hw4.html">Back to homework 4 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+
+    
+</body>
+</html>

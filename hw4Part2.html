@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 4 looping functions part 2">
+    <title>Assignment 4 part 2</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+       function process(){
+
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33F6","#33FFF6"];
+
+        for(let i=5; i<=9;i++){
+            let table = `<table border="1" style="border-collapse: collapse;">`;
+            table += `<tr style="background-color:${colors[i-4]}" ><th>Number</th> <th>Multiplier</th><th>Result</th></tr>`;
+            for(let j=1; j<=9;j++){
+                let result = i * j;
+                table += `<tr><td>${j}</td> <td>${i}</td><td>${result}</td></tr>`;
+        }
+        
+        table += `</table> <br/> <br/>`;
+        let divTwo = document.getElementById(`resultDiv${i}`);
+        divTwo.innerHTML = table;
+       }
+    }
+           
+   </script>
+</head>
+<body>
+
+    <h1>Learning Multiplication</h1>
+   
+ <div id="resultDiv5"> </div>
+ <div id="resultDiv6"> </div>
+ <div id="resultDiv7"> </div>
+ <div id="resultDiv8"> </div>
+ <div id="resultDiv9"> </div>
+ <script>process()</script>
+
+    <ul>
+        <li><a href="hw4.html">Back to homework 4 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+
+    
+</body>
+</html>
