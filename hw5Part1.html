@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 5 arrays part 1">
+    <title>Assignment 5 part 1</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+        
+    function validation(){
+
+        let nameVal = document.getElementById("fullName").value;
+        //console.log(nameVal)
+
+        let ageVal = document.querySelector(`input[name="age"]:checked`)
+        //let ageValResult = ageVal.value;
+
+        let browserVal = document.querySelector(`input[name="browser"]:checked`)
+
+        let genreVal = document.getElementById("Genre").value
+
+        //console.log(genreVal)
+
+        //console.log(browserVal)
+        //console.log(ageValResult)
+        let resultDiv = document.getElementById("result");
+
+        
+
+        if(nameVal && ageVal && browserVal && genreVal){
+        resultDiv.innerHTML="<p>Thanks,your data was submitted</p>"
+        }
+        else{
+            resultDiv.innerHTML="<p>Error, fill out all data values </p>"
+        }
+    
+      
+
+    }
+
+      function resetVal(){
+             let resulDiv = document.getElementById("result");
+             resulDiv.innerHTML=""
+
+
+        }
+           
+   </script>
+</head>
+<body>
+
+    <h1>Homework 5 - Data Submit </h1>
+   
+ <form>
+
+        <input type="text" id="fullName" name="nameOnly" placeholder="Enter name here...">
+        <div>
+        <p>Enter Age: </p>
+        <input type="radio" name="age" id="ageGroup1" value="20">
+        <label for="ageGroup1">0 - 21</label><br>
+        <input type="radio" name="age" id="ageGroup2" value="50">
+        <label for="ageGroup2">21 - 50</label><br>
+        <input type="radio" name="age" id="ageGroup3" value="51">
+        <label for="ageGroup3"> 50+ </label><br>
+        </div>
+        <div >
+            <p>Select Browsers Used:</p><br>
+            <input type="checkbox" name="browser" id="browser1" value="fireFox">
+            <label for="browser1">FireFox</label>
+            <input type="checkbox" name="browser" id="browser2" value="Edge">
+            <label for="browser2">Edge</label>
+            <input type="checkbox" name="browser" id="browser3" value="fireFox">
+            <label for="browser3">Chrome</label>
+            <input type="checkbox" name="browser" id="browser4" value="fireFox">
+            <label for="browser4">Safari</label>
+        </div>
+        <div>
+            <p>Movie Genre Preferred:</p><br>
+            <select id="Genre">
+                <option >Select Move Genre</option>
+                <option  value="action">Action</option>
+                <option  value="comedy">Comedy</option>
+                <option  value="drama">Drama</option>
+                <option  value="Docu">Documentary</option>
+                <option  value="SciFi">Science Fiction</option>
+            </select>
+        </div>
+        <br>
+        
+        <div>
+            <input type="button" onclick="validation()" value="Submit">
+            <input type="reset" onclick="resetVal()" value="Reset">
+        </div>
+          <div id="result">
+
+    </div>
+
+    </form>
+
+
+    <ul>
+        <li><a href="hw5.html">Back to homework 5 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>

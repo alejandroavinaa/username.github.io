@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 5 arrays part 2">
+    <title>Assignment 5 part 2</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+
+
+
+    function validation(){
+        let result = document.getElementById("result")
+        let inputState = document.getElementById("state")
+        inputStateVal = inputState.value;
+        console.log(inputStateVal);
+        if(inputStateVal.toLowerCase() == "california" || inputStateVal.toLowerCase()=="ca"){
+            result.innerHTML = "<p>State abbr=CA</p><p>State Name = California</p><p>Capital = Sacramento </p><p>Population = 39,431,263</p>" 
+        }
+        else if(inputStateVal.toLowerCase() == "alabama" || inputStateVal.toLowerCase()=="al"){
+            result.innerHTML = "<p>State abbr=AL</p><p>State Name = Alabama</p><p>Capital = Montgomery </p><p>Population = 5,157,699</p>"   
+
+        }
+        else if(inputStateVal.toLowerCase() == "alaska" || inputStateVal.toLowerCase()=="ak"){
+            result.innerHTML = "<p>State abbr=AK</p><p>State Name = Alaska</p><p>Capital = Juneau </p><p>Population = 740,133</p>"   
+
+        }
+        else if(inputStateVal.toLowerCase() == "arizona" || inputStateVal.toLowerCase()=="az"){
+            result.innerHTML = "<p>State abbr=AZ</p><p>State Name = Arizona</p><p>Capital = Phoenix </p><p>Population = 7,582,384</p>"   
+
+        }
+        else if(inputStateVal.toLowerCase() =="colorado" || inputStateVal.toLowerCase()=="co"){
+            result.innerHTML = "<p>State abbr=CO</p><p>State Name = Colorado</p><p>Capital = Denver </p><p>Population = 5,957,493</p>"   
+
+        }
+        else{
+            result.innerHTML = "Sorry, we do not have information about this state! Please enter another state....."
+        }
+
+    }
+
+      
+
+    function reset(){
+
+       
+        result.innerHTML = ""
+
+
+
+    }
+              
+   </script>
+</head>
+<body>
+
+    <h1>Homework 5 - Data Submit </h1>
+   
+ <form>
+
+        <input type="text" id="state" name="nameOnly" placeholder="Enter state here...">
+    
+        <div>
+            <input type="button" onclick="validation()" value="Submit">
+            <input type="reset" onclick="reset()" value="Reset">
+        </div>
+          <div id="result">
+          </div>
+
+    </form>
+
+
+    <ul>
+        <li><a href="hw5.html">Back to homework 5 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>
