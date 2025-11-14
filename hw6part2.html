@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 6 search part 2">
+    <title>Assignment 6 part 2</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+        function validation(){
+        let letterInput = document.getElementById("letterInput").value.toLowerCase();
+        let textInput = document.getElementById("textInput").value.toLowerCase();
+        let resultDiv = document.getElementById("result");
+        let count = 0;
+        if(letterInput && textInput){
+            for(let i=0; i<textInput.length;i++){
+                if(letterInput == textInput[i]){
+                    count += 1;
+                }
+            }
+            if(count >=1){
+            resultDiv.innerHTML=`<p> The count of input letter ${letterInput} is ${count}`
+            }
+            else{
+
+                var myText = "<html>\n";
+                myText += "<head>\n";
+                myText += "<title>Popup Window</title>\n";
+                myText += "</head>\n";
+                myText += "<body>\n";
+                myText += "<div style='margin:0 auto;'>\n";
+                myText += "<p><strong> Search character " + letterInput + " is not found in the content you typed</strong></p>\n";
+                myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+                myText += "</div>\n";
+                myText += "</body>\n";
+                myText += "</html>";
+
+
+                var newWindow = window.open("", "new_window",
+"top=1,left=100,width=300,height=100");
+                newWindow.focus();
+                newWindow.document.write(myText);
+                newWindow.document.close();
+
+            }
+        }
+        else{
+            resultDiv.innerHTML = "<p>Enter both fields </p>"
+        }
+        }
+
+        function resetVal(){
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+           
+        }
+   
+           
+   </script>
+</head>
+<body>
+
+    <h1>Homework 6 - Search </h1>
+   
+ <form>
+
+        <input type="text" id="letterInput" name="letterInput" maxlength="1" placeholder="Enter letter to search...">
+        <br>
+        <br>
+
+        <textarea id="textInput" name="textArea" rows="10" cols="30" placeholder="Enter text here..."></textarea>
+        
+        
+        <div>
+            <input type="button" onclick="validation()" value="Submit">
+            <input type="reset" onclick="resetVal()" value="Reset">
+        </div>
+          <div id="result">
+
+    </div>
+
+    </form>
+
+
+    <ul>
+        <li><a href="hw6.html">Back to homework 6 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 6 objects part 1">
+    <title>Assignment 6 part 1</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+    let errMessage = "Error, please enter a valid number with 4 decimal places";
+
+      let numberRegExp = /^(\d*)(\.)(\d{4})/ ;
+    
+
+    function validation(){
+        let inputValue = document.getElementById("NumberInput").value;
+        let resultDiv = document.getElementById("result");
+       
+
+        if(numberRegExp.test(inputValue)){
+            resultDiv.innerHTML="<p>Thanks, your number was submitted</p>"
+            
+            let number = parseFloat(inputValue);
+            let roundedNum = Math.round(number);
+            let squaredNum = Math.sqrt(number).toFixed(0);
+            let tenths = number.toFixed(1);
+            let hundredths = number.toFixed(2);
+            let thousandths = number.toFixed(3);
+
+            resultDiv.innerHTML+=`<p>You typed number ${number}</p>`
+            resultDiv.innerHTML+=`<p>Rounded number: ${roundedNum}</p>`
+            resultDiv.innerHTML+=`<p>Square root: ${squaredNum}</p>`
+            resultDiv.innerHTML+=`<p>Tenths place: ${tenths}</p>`
+            resultDiv.innerHTML+=`<p>Hundredths place: ${hundredths}</p>`
+            resultDiv.innerHTML+=`<p>Thousandths place: ${thousandths}</p>`
+        
+        }
+        else{
+            resultDiv.innerHTML=`<p>${errMessage}</p>`
+        }
+        console.log(inputValue)
+    }
+
+    function resetVal(){
+             let resulDiv = document.getElementById("result");
+             resulDiv.innerHTML=""
+    }
+           
+   </script>
+</head>
+<body>
+
+    <h1>Homework 6 - Calculation </h1>
+   
+ <form>
+
+        <input type="number" id="NumberInput" name="numOnly" >
+    
+        
+        
+        
+        <div>
+            <input type="button" onclick="validation()" value="Submit">
+            <input type="reset" onclick="resetVal()" value="Reset">
+        </div>
+          <div id="result">
+
+    </div>
+
+    </form>
+
+
+    <ul>
+        <li><a href="hw6.html">Back to homework 6 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>
