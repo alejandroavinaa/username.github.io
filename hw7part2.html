@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 7  part 2">
+    <title>Assignment 7 part 2</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+     
+  function createCookie() {
+  var cName = "username";
+  var cValue = document.getElementById("user").value;
+  document.cookie = cName + "=" + cValue + ";";
+
+  var cNameSecond = "name"
+  var cValueSecond = document.getElementById("userName").value;
+  document.cookie = cNameSecond + "=" + cValueSecond + ";";
+}
+
+function getCookie(cName) {
+  var name = cName + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user = getCookie("username");
+  var nameUser = getCookie("name");
+  if (user != "" && nameUser !="") {
+    console.log(user);
+    document.getElementById("result").innerHTML = "Welcome back " + user;
+    document.getElementById("myform").style.display = "none";
+  } else {
+    document.getElementById("myform").style.display = "block";
+    }
+  }
+ 
+    
+   </script>
+</head>
+<body onload="checkCookie()" >
+
+   
+
+    <h1>Homework 7 - Cookies </h1>
+
+    
+    <p id="result"></p>
+   
+  <div id="myform" style="display: block">
+    <form>
+
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="userName" placeholder="Enter Name here...."/>
+        <br>
+        <label for="user">Username:</label>
+        <input type="text" id="user" name="user" placeholder="Enter username">
+        <br>
+        <button type="submit" onclick="createCookie()">Create Cookie</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    </div>
+
+
+
+    <ul>
+        <li><a href="hw7.html">Back to homework 7 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Hw assignment 7  part 1">
+    <title>Assignment 7 part 1</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+
+    function myFunction() {
+  let x = document.getElementById("body");
+  if (x.className == "theBackground") {
+    x.className = "theSecondBackground";
+  } else {
+    x.className = "theBackground";
+  }
+}
+
+ function myFunctionTwo() {
+
+  let x = document.getElementById("Main");
+  let y = document.getElementById("underline");
+  let z = document.getElementById("bolder");
+  let b = document.getElementById('italic');
+  if(y.checked){
+   x.classList.add('underline')
+  }
+  else{
+    x.classList.remove('underline')
+  }
+  if(z.checked){
+    x.classList.add('bold')
+  }
+  else{
+    x.classList.remove('bold')
+  }
+  if(b.checked){
+    x.classList.add('italic')
+  }
+  else{
+    x.classList.remove('italic')
+  }
+
+}
+
+function myFunctionThree(){
+
+    let b = document.getElementById("fontSizing")
+    let x = document.getElementById("Main");
+    let selectedIndex = b.selectedIndex;
+    x.style.fontSize = b.options[selectedIndex].value
+
+}
+
+    
+   </script>
+</head>
+<body id="body" class="theBackground">
+
+   
+
+    <h1>Homework 7 - Dom Manipulation </h1>
+
+    <div id="Main" class="Main">
+
+        <p>
+            Thanksgiving is a time when families and friends come together to celebrate gratitude and connection. As autumn leaves blanket the ground and the air turns crisp, homes fill with the comforting aromas of roasted turkey, warm spices, and freshly baked pies. The holiday creates a welcome pause from the busyness of life, inviting people to slow down and enjoy the warmth of one another’s company. 
+            <br><br>
+
+At its heart, Thanksgiving is about reflecting on the blessings—big and small—that have shaped the year. Many households take a moment before the meal to share what they’re thankful for, turning the dinner table into a space for heartfelt reflection. Whether it’s gratitude for health, family, opportunities, or simply making it through tough times, these expressions of appreciation strengthen bonds and remind everyone of what truly matters.
+
+Beyond the feast and festivities, <br><br> Thanksgiving also encourages generosity and community spirit. Many people volunteer, donate meals, or extend invitations to those who may not have a place to celebrate. This mindset of giving and togetherness captures the holiday’s true meaning, reminding us that gratitude is most powerful when it’s shared.
+        </p>
+
+    </div>
+    
+   
+ <form>
+   
+        <h3>Select which background color to use </h3>
+        <input type="radio" id="lightBlue" name="color" value="theBackground" onChange="myFunction()">
+        <label for ="lightBlue">Light Blue</label>
+        <input type="radio" id="white" name = "color" value="theSecondBackground" onChange="myFunction()">
+        <label for = "white">White</label>
+
+        <br>
+
+        <h3>Select options to change text</h3>
+        <input type="checkbox" id="underline" name="underline" value="underline" onChange="myFunctionTwo()">
+        <label for="underline">Underline</label><br>
+        <input type="checkbox" id="bolder" name="bold" value="bold" onChange="myFunctionTwo()">
+        <label for="bold">bold</label><br>
+        <input type="checkbox" id="italic" name="italic" value="italic" onChange="myFunctionTwo()">
+        <label for="italic">italic</label><br>
+
+        <br>
+        <label for="fontSizing"><h3>Choose a font Size:</h3></label>
+        <select id="fontSizing" name="fontSizing" onChange="myFunctionThree()">
+            <option>Select Size:</option>
+            <option value="16px">16</option>
+            <option value="36px">36</option>
+            <option value="52px">52</option>
+        </select>
+
+ </form>
+
+
+    <ul>
+        <li><a href="hw7.html">Back to homework 7 page</a></li>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+    
+</body>
+</html>
