@@ -1,7 +1,13 @@
 
-body{
+
+.theBackground{
     background-color: lightcyan;
 }
+
+.theSecondBackground{
+    background-color:white;
+}
+
 
 h1{
     text-align:center;
@@ -56,6 +62,24 @@ a:hover{
     padding:10px;
     margin:auto;
 }
+
+.container{
+    background-color: white;
+}
+
+
+.underline{
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight:bold;
+}
+
+.italic{
+    font-style: italic
+}
+
 
 
 
