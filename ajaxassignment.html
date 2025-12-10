@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="Homework 8 - AJAX Application">
+    <title>Homework 8 - AJAX Application</title>
+   <link rel="stylesheet" href="styles.css">
+   <script>
+    
+   </script>
+</head>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<h1>Homework 8 - AJAX Application</h1>
+
+<button type="button" onclick="loadDoc()">Get CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    myFunction(this);
+  }
+  xhttp.open("GET", "cd_catalog.xml");
+  xhttp.send();
+}
+function myFunction(xml) {
+  const xmlDoc = xml.responseXML;
+  const x = xmlDoc.getElementsByTagName("CD");
+  let table="<tr><th>Artist</th><th>Title</th></tr>";
+  for (let i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+<h2>Explanation of AJAX</h2>
+<p>The first function in script loadDoc() creates a XMLHttpRequest() object.The .open prepares request, .send to send request to server. Onload the request is passed to myFunction(). The function recieves request and loops through the CD elements, and buils an HTML table of Artist and title. This is also 
+  shown inside the element with "demo" id. The first constant xmlDoc stores the XML inputed from onload.
+ All elements with tag "CD" are stored in constant x. Then there is a for loop that loops through each CD and outputs a table that is inputted into dom area with id of "demo". </p>
+ 
+<h2>Rest API</h2>
+<p>Paypal API allows deveolpers to accept payments through this API. With this api it is possible to use Apple Pay,Android Pay, and Venmo. This is a good API from a reputable source.The response format for the 
+   data is in JSON, which is an easy to use format. This API requires an authentication key which makes sense because the information that is being processed if of high value because of the use of money. To use 
+   the paypal api there is no fee or needed deveolper account. They only charge per transaction fee.The documentation available is very useful and straightforward, everything is available in order to get started
+   and implement this in code. The API also provides extensive testing tools through PayPals sandbox environment, allowing developers to simulate transactions without using real money. This can allow dev's to work
+   on testing this in a safe manner. </p>
+ <p>Click a link below to view the official docs. Links open in a new tab.</p>
+  <a href="https://developer.paypal.com/docs/api/overview/"
+             target="_blank" rel="noopener noreferrer">
+            PayPal API Reference
+          </a>
+
+    <ul>
+        <li><a href="HtmlAssignments.html">Back to Home Page</a> </li>
+    </ul>
+  
+
+</body>
+</html>
